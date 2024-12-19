@@ -19,5 +19,5 @@ function GetRandomOtherID() {
   return rand(otherCount);
 }
 
-myHeading.textContent = "Hello world! " + GetRandomWordID();
+myHeading.textContent = "Hello world! ";// + GetRandomWordID();
 myWordLocation.textContent = "ok"
