@@ -40,7 +40,7 @@ function getRandomOtherID() {
 
 
 //https://github.com/mdn/dom-examples/blob/main/fetch/fetch-text/index.html
-async function getData(fileName, rowID) {
+function getData(fileName, rowID) {
   const myRequest = new Request(fileName);
   fetch(myRequest)
     .then((response) => {
@@ -71,9 +71,9 @@ function getGermanWord(rowID) {
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
 
 //click on the next button --> init all variables and set the fields
-function setNewWord() {
+async function setNewWord() {
   id = getRandomWordID();
-  getData(wordsFileLocation, id);
+  await getData(wordsFileLocation, id);
   mainWord = mainString.split("\t")[0];
   mainTranslation = mainString.split("\t")[1];
   mainArticle = mainString.split("\t")[2]; //this exists only for words, not for verbs or other
