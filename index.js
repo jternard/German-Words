@@ -105,3 +105,7 @@ function newWord() {
   setNewWord();
   renderWord();
 }
+
+function checkArticle(element) {
+  console.log(this.id);
+}
