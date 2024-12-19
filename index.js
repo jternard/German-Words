@@ -50,16 +50,16 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      return text.split("\n")[rowID];
-      /*
+      //return text.split("\n")[rowID];
+      
       myWordLocation.textContent = text.split("\n")[rowID];
-      GermanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
-      EnglishWordInHTML.textContent = myWordLocation.textContent.split("\t")[1];
-      */
+      germanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
+      englishWordInHTML.textContent = myWordLocation.textContent.split("\t")[1];
+      
     })
     .catch((error) => {
-      return `Error: ${error.message}`;
-      //myWordLocation.innerText = `Error: ${error.message}`;
+      //return `Error: ${error.message}`;
+      myWordLocation.innerText = `Error: ${error.message}`;
     });
 }
 
