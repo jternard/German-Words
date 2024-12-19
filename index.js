@@ -46,7 +46,7 @@ function GetFile(fileName) {
 
 function GetGermanWord(rowID) {
   GetFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
-  console.log(wordFile);
+  console.log(wordFile.slice(0, input.indexOf("\n")));
 }
 
 myHeading.textContent = "Hello world!";
