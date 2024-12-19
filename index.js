@@ -4,6 +4,7 @@ const otherCount = 1099;
 
 const myHeading = document.querySelector("h1");
 const myWordLocation = document.querySelector("p");
+const mySkipButton = document.querySelector("#btnSkip");
 
 function getRandomInt(min, max) {
   const minCeiled = Math.ceil(min);
@@ -21,5 +22,10 @@ function GetRandomOtherID() {
   return getRandomInt(0, otherCount);
 }
 
+function SetGermanWord() {
+  myWordLocation.textContent = GetRandomWordID();
+}
+
 myHeading.textContent = "Hello world!";
 myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
+mySkipButton.addEventListener("click", SetGermanWord);
