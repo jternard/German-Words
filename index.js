@@ -69,9 +69,9 @@ const getMainString = (wordsFileLocation, id) => {
   });
 }
 
-function getGermanWord(rowID) {
-  console.log(rowID);
-  getData(wordsFileLocation, rowID);
+function getGermanWord() {
+  id = getRandomWordID();
+  getData(wordsFileLocation, id);
 }
 
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
