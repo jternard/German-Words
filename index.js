@@ -44,11 +44,17 @@ function GetFile(fileName) {
   client.send();
 }
 
-function GetGermanWord(rowID) {
-  GetFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
-  console.log(wordFile.slice(0, wordFile.indexOf("\n")));
+async function FetchFile(fileName) {
+  varFile = await fetch(fileName)
+    .then(response => response.text())
 }
+
+function GetGermanWord(rowID) {
+  FetchFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
+  return wordFile.slice(rowID, wordFile.indexOf("\n"));
+}
+
 
 myHeading.textContent = "Hello world!";
 myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
-mySkipButton.addEventListener("click", SetGermanWord);
+mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
