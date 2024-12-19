@@ -49,9 +49,26 @@ function FetchFile(fileName) {
     .then(response => varFile = response.text());
 }
 
+//https://github.com/mdn/dom-examples/blob/main/fetch/fetch-text/index.html
+function getData(fileName, rowID) {
+  const myRequest = new Request(fileName);
+  fetch(myRequest)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error, status = ${response.status}`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      myWordLocation.innerText = text.slice(rowID, text.indexOf("\n"));
+    })
+    .catch((error) => {
+      myWordLocation.innerText = `Error: ${error.message}`;
+    });
+}
+
 function GetGermanWord(rowID) {
-  FetchFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
-  return wordFile.slice(rowID, wordFile.indexOf("\n"));
+  getData(wordsFileLocation, rowID);
 }
 
 
