@@ -70,10 +70,10 @@ function getData(fileName, rowID) {
 }
 
 function GetGermanWord(rowID) {
+  console.log(rowID);
   getData(wordsFileLocation, rowID);
 }
 
-
-myHeading.textContent = "Hello world!";
-myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
+//myHeading.textContent = "Hello world!";
+//myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
 mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
