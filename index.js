@@ -51,10 +51,12 @@ function getData(fileName, rowID) {
     })
     .then((text) => {
       mainString = text.split("\n")[rowID];
-      myWordLocation.textContent = mainString;
+      //myWordLocation.textContent = mainString;
       var mySplit = mainString.split("\t");
-      germanWordInHTML.textContent = mySplit[0];
-      englishWordInHTML.textContent = mySplit[1];
+      mainWord = mySplit[0];
+      mainTranslation = mySplit[1];
+      //germanWordInHTML.textContent = mySplit[0];
+      //englishWordInHTML.textContent = mySplit[1];
       mainArticle = mySplit[2];
       /*
       myWordLocation.textContent = text.split("\n")[rowID];
@@ -77,6 +79,7 @@ const getMainString = (wordsFileLocation, id) => {
 function getGermanWord() {
   id = getRandomWordID();
   getData(wordsFileLocation, id);
+  renderWord();
 }
 
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
