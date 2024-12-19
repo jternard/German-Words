@@ -14,6 +14,10 @@ const myHeading = document.querySelector("h1");
 const myWordLocation = document.querySelector("p");
 //const mySkipButton = document.querySelector("#btnSkip");
 
+const GermanWordInHTML = document.getElementById("InputGerman");
+const EnglishWordInHTML = document.getElementById("InputTranslation");
+
+
 
 function getRandomInt(min, max) {
   const minCeiled = Math.ceil(min);
@@ -67,6 +71,9 @@ function getData(fileName, rowID) {
       //alert(text);
       //myWordLocation.textContent = text.slice(rowID, text.indexOf("\r\n"));
       myWordLocation.textContent = text.split("\n")[rowID];
+      GermanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
+      EnglishWordInHTML.textContent = myWordLocation.textContent.split("\t")[1];
+      
     })
     .catch((error) => {
       myWordLocation.innerText = `Error: ${error.message}`;
