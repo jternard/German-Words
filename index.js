@@ -12,7 +12,7 @@ var otherFile;
 
 const myHeading = document.querySelector("h1");
 const myWordLocation = document.querySelector("p");
-const mySkipButton = document.querySelector("#btnSkip");
+//const mySkipButton = document.querySelector("#btnSkip");
 
 
 function getRandomInt(min, max) {
@@ -31,6 +31,8 @@ function GetRandomOtherID() {
   return getRandomInt(0, otherCount);
 }
 
+/*
+
 function SetGermanWord() {
   myWordLocation.textContent = GetRandomWordID();
 }
@@ -44,10 +46,12 @@ function GetFile(fileName) {
   client.send();
 }
 
+
 function FetchFile(fileName) {
   fetch(fileName)
     .then(response => varFile = response.text());
 }
+*/
 
 //https://github.com/mdn/dom-examples/blob/main/fetch/fetch-text/index.html
 function getData(fileName, rowID) {
@@ -76,4 +80,4 @@ function GetGermanWord(rowID) {
 
 //myHeading.textContent = "Hello world!";
 //myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
-mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
+//mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
