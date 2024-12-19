@@ -1,6 +1,6 @@
-const wordCount = 2426;
-const verbCount = 900;
-const otherCount = 1099;
+//const wordCount = 2426;
+//const verbCount = 900;
+//const otherCount = 1099;
 
 const myHeading = document.querySelector("h1");
 myHeading.textContent = "Hello world!";
@@ -23,4 +23,4 @@ function GetRandomOtherID() {
 }
 */
 
-myWordLocation.textContent = "ok"
+//myWordLocation.textContent = "ok"
