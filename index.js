@@ -110,6 +110,6 @@ function newWord() {
 }
 
 function checkArticle(caller) {
-  var btnArticle = lower(right(caller.id, 3));
+  var btnArticle = right(caller.id, 3).toLowerCase();
   btnArticle == mainArticle ? caller.className = "btn btn-outline-success" : caller.className = "btn btn-outline-danger";
 }
