@@ -60,7 +60,7 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      alert(text);
+      //alert(text);
       //myWordLocation.textContent = text.slice(rowID, text.indexOf("\r\n"));
       myWordLocation.textContent = text.split("\n")[rowID];
     })
