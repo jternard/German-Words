@@ -71,9 +71,9 @@ function getGermanWord(rowID) {
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
 
 //click on the next button --> init all variables and set the fields
-async function setNewWord() {
+function setNewWord() {
   id = getRandomWordID();
-  mainString = await getData(wordsFileLocation, id);
+  mainString = async () => await getData(wordsFileLocation, id);
   mainWord = mainString.split("\t")[0];
   mainTranslation = mainString.split("\t")[1];
   mainArticle = mainString.split("\t")[2]; //this exists only for words, not for verbs or other
