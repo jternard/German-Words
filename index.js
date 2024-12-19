@@ -111,5 +111,6 @@ function newWord() {
 
 function checkArticle(caller) {
   var btnArticle = caller.id.substr(-3).toLowerCase();
+  console.log(btnArticle);
   (btnArticle === mainArticle) ? caller.className = "btn btn-outline-success" : caller.className = "btn btn-outline-danger";
 }
