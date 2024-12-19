@@ -1,10 +1,19 @@
-const wordCount = 2426;
-const verbCount = 900;
-const otherCount = 1099;
+const wordsFileLocation = './5000 german words - Words.tsv'
+const wordCount = 2426; //to be manually updated
+var wordFile;
+
+const verbsFileLocation = './5000 german words - Verbs.tsv'
+const verbCount = 900; //to be manually updated
+var verbFile;
+
+const otherFileLocation = './5000 german words - Other.tsv'
+const otherCount = 1099; //to be manually updated
+var otherFile;
 
 const myHeading = document.querySelector("h1");
 const myWordLocation = document.querySelector("p");
 const mySkipButton = document.querySelector("#btnSkip");
+
 
 function getRandomInt(min, max) {
   const minCeiled = Math.ceil(min);
@@ -24,6 +33,20 @@ function GetRandomOtherID() {
 
 function SetGermanWord() {
   myWordLocation.textContent = GetRandomWordID();
+}
+
+function GetFile(fileName) {
+  var client = new XMLHttpRequest();
+  client.open('GET', fileName);
+  client.onreadystatechange = function() {
+    alert(client.responseText);
+  }
+  client.send();  
+}
+
+function GetGermanWord(rowID) {
+  wordFile = GetFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
+  
 }
 
 myHeading.textContent = "Hello world!";
