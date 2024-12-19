@@ -1,13 +1,9 @@
-//const wordCount = 2426;
-//const verbCount = 900;
-//const otherCount = 1099;
+const wordCount = 2426;
+const verbCount = 900;
+const otherCount = 1099;
 
-//const myHeading = document.querySelector("h1");
-document.querySelector("h1").textContent = "Hello world!";
-document.querySelector("p").textContent = "js2";
-
-/*
-const myWordLocation = document.querySelector("#myWord");
+const myHeading = document.querySelector("h1");
+const myWordLocation = document.querySelector("p");
 
 function rand(number) {
   return Math.trunc(Math.random(number));
@@ -24,4 +20,5 @@ function GetRandomOtherID() {
 }
 */
 
-//myWordLocation.textContent = "ok"
+myHeading.querySelector("h1").textContent = "Hello world!";
+myWordLocation.textContent = "ok"
