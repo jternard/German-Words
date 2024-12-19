@@ -4,6 +4,7 @@
 
 //const myHeading = document.querySelector("h1");
 document.querySelector("h1").textContent = "Hello world!";
+document.querySelector("p").textContent = "js2";
 
 /*
 const myWordLocation = document.querySelector("#myWord");
