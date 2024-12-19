@@ -57,7 +57,7 @@ function getData(fileName, rowID) {
       mainTranslation = mySplit[1];
       //germanWordInHTML.textContent = mySplit[0];
       //englishWordInHTML.textContent = mySplit[1];
-      mainArticle = mySplit[2];
+      mainArticle = mySplit[2].substr(0,3);
       /*
       myWordLocation.textContent = text.split("\n")[rowID];
       germanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
