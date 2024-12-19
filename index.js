@@ -5,18 +5,20 @@ const otherCount = 1099;
 const myHeading = document.querySelector("h1");
 const myWordLocation = document.querySelector("p");
 
-function rand(number) {
-  return Math.trunc(Math.random(number));
+function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
 }
 
 function GetRandomWordID() {
-  return rand(wordCount);
+  return getRandomInt(0, wordCount);
 }
 function GetRandomVerbID() {
-  return rand(verbCount);
+  return getRandomInt(0, verbCount);
 }
 function GetRandomOtherID() {
-  return rand(otherCount);
+  return getRandomInt(0, otherCount);
 }
 
 myHeading.textContent = "Hello world!";
