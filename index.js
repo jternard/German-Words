@@ -63,6 +63,12 @@ function getData(fileName, rowID) {
     });
 }
 
+const getMainString = (wordsFileLocation, id) => {
+  getData(wordsFileLocation, id).then((txt) => {
+    mainString = txt;
+  });
+}
+
 function getGermanWord(rowID) {
   console.log(rowID);
   getData(wordsFileLocation, rowID);
