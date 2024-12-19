@@ -50,12 +50,17 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      //return text.split("\n")[rowID];
-      
+      mainString = text.split("\n")[rowID];
+      myWordLocation.textContent = mainString;
+      var mySplit = mainString.split("\t");
+      germanWordInHTML.textContent = mySplit[0];
+      englishWordInHTML.textContent = mySplit[1];
+      mainArticle = mySplit[2];
+      /*
       myWordLocation.textContent = text.split("\n")[rowID];
       germanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
       englishWordInHTML.textContent = myWordLocation.textContent.split("\t")[1];
-      
+      */      
     })
     .catch((error) => {
       //return `Error: ${error.message}`;
