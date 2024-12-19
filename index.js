@@ -106,6 +106,6 @@ function newWord() {
   renderWord();
 }
 
-function checkArticle(element) {
-  console.log(this.id);
+function checkArticle(caller) {
+  console.log(caller.id);
 }
