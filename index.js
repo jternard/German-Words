@@ -50,7 +50,7 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      return text.resolve().split("\n")[rowID];
+      return text.split("\n")[rowID];
       /*
       myWordLocation.textContent = text.split("\n")[rowID];
       GermanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
@@ -71,9 +71,9 @@ function getGermanWord(rowID) {
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
 
 //click on the next button --> init all variables and set the fields
-function setNewWord() {
+async function setNewWord() {
   id = getRandomWordID();
-  mainString = resolve(getData(wordsFileLocation, id));
+  mainString = await getData(wordsFileLocation, id);
   mainWord = mainString.split("\t")[0];
   mainTranslation = mainString.split("\t")[1];
   mainArticle = mainString.split("\t")[2]; //this exists only for words, not for verbs or other
