@@ -3,7 +3,7 @@ const verbCount = 900;
 const otherCount = 1099;
 
 const myHeading = document.querySelector("h1");
-const myWordLocation = document.querySelector("tr/td[1]");
+const myWordLocation = document.querySelector("#myWord");
 
 function rand(number) {
   return Math.trunc(Math.random(number));
