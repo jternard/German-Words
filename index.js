@@ -57,9 +57,11 @@ function getData(fileName, rowID) {
       if (!response.ok) {
         throw new Error(`HTTP error, status = ${response.status}`);
       }
+      alert(response.text());
       return response.text();
     })
     .then((text) => {
+      alert(text);
       myWordLocation.textContent = text.slice(rowID, text.indexOf("\r\n"));
     })
     .catch((error) => {
