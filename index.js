@@ -80,6 +80,9 @@ function getGermanWord() {
   id = getRandomWordID();
   getData(wordsFileLocation, id);
   renderWord();
+  document.getElementById("btnDER").className = "btn btn-outline-primary";
+  document.getElementById("btnDIE").className = "btn btn-outline-primary";
+  document.getElementById("btnDAS").className = "btn btn-outline-primary";
 }
 
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
@@ -107,5 +110,6 @@ function newWord() {
 }
 
 function checkArticle(caller) {
-  console.log(caller.id);
+  var btnArticle = lower(right(caller.id, 3));
+  btnArticle == mainArticle ? caller.className = "btn btn-outline-success" : caller.className = "btn btn-outline-danger";
 }
