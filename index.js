@@ -61,7 +61,8 @@ function getData(fileName, rowID) {
     })
     .then((text) => {
       alert(text);
-      myWordLocation.textContent = text.slice(rowID, text.indexOf("\r\n"));
+      //myWordLocation.textContent = text.slice(rowID, text.indexOf("\r\n"));
+      myWordLocation.textContent = text.split("\n")[rowID];
     })
     .catch((error) => {
       myWordLocation.innerText = `Error: ${error.message}`;
