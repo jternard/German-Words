@@ -39,14 +39,14 @@ function GetFile(fileName) {
   var client = new XMLHttpRequest();
   client.open('GET', fileName);
   client.onreadystatechange = function() {
-    alert(client.responseText);
+    wordFile = client.responseText;
   }
-  client.send();  
+  client.send();
 }
 
 function GetGermanWord(rowID) {
-  wordFile = GetFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
-  
+  GetFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
+  Console.log(wordFile);
 }
 
 myHeading.textContent = "Hello world!";
