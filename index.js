@@ -73,7 +73,7 @@ function getGermanWord(rowID) {
 //click on the next button --> init all variables and set the fields
 function setNewWord() {
   id = getRandomWordID();
-  mainString = getData(wordsFileLocation, id);
+  mainString = resolve(getData(wordsFileLocation, id));
   mainWord = mainString.split("\t")[0];
   mainTranslation = mainString.split("\t")[1];
   mainArticle = mainString.split("\t")[2]; //this exists only for words, not for verbs or other
