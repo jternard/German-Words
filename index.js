@@ -1,21 +1,24 @@
 const wordsFileLocation = './5000 german words - Words.tsv'
 const wordCount = 2426; //to be manually updated
-var wordFile;
 
 const verbsFileLocation = './5000 german words - Verbs.tsv'
 const verbCount = 900; //to be manually updated
-var verbFile;
 
 const otherFileLocation = './5000 german words - Other.tsv'
 const otherCount = 1099; //to be manually updated
-var otherFile;
 
 const myHeading = document.querySelector("h1");
 const myWordLocation = document.querySelector("p");
 //const mySkipButton = document.querySelector("#btnSkip");
 
-const GermanWordInHTML = document.getElementById("InputGerman");
-const EnglishWordInHTML = document.getElementById("InputTranslation");
+const germanWordInHTML = document.getElementById("inputGerman");
+const englishWordInHTML = document.getElementById("inputTranslation");
+
+var id;
+var mainString;
+var mainWord;
+var mainTranslation;
+var mainArticle;
 
 
 
@@ -25,37 +28,16 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
 }
 
-function GetRandomWordID() {
+function getRandomWordID() {
   return getRandomInt(0, wordCount);
 }
-function GetRandomVerbID() {
+function getRandomVerbID() {
   return getRandomInt(0, verbCount);
 }
-function GetRandomOtherID() {
+function getRandomOtherID() {
   return getRandomInt(0, otherCount);
 }
 
-/*
-
-function SetGermanWord() {
-  myWordLocation.textContent = GetRandomWordID();
-}
-
-function GetFile(fileName) {
-  var client = new XMLHttpRequest();
-  client.open('GET', fileName);
-  client.onreadystatechange = function() {
-    wordFile = client.responseText;
-  }
-  client.send();
-}
-
-
-function FetchFile(fileName) {
-  fetch(fileName)
-    .then(response => varFile = response.text());
-}
-*/
 
 //https://github.com/mdn/dom-examples/blob/main/fetch/fetch-text/index.html
 function getData(fileName, rowID) {
@@ -68,23 +50,42 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      //alert(text);
-      //myWordLocation.textContent = text.slice(rowID, text.indexOf("\r\n"));
+      return text.split("\n")[rowID];
+      /*
       myWordLocation.textContent = text.split("\n")[rowID];
       GermanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
       EnglishWordInHTML.textContent = myWordLocation.textContent.split("\t")[1];
-      
+      */
     })
     .catch((error) => {
-      myWordLocation.innerText = `Error: ${error.message}`;
+      return `Error: ${error.message}`;
+      //myWordLocation.innerText = `Error: ${error.message}`;
     });
 }
 
-function GetGermanWord(rowID) {
+function getGermanWord(rowID) {
   console.log(rowID);
   getData(wordsFileLocation, rowID);
 }
 
-//myHeading.textContent = "Hello world!";
-//myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
+
+//click on the next button --> init all variables and set the fields
+function setNewWord() {
+  id = getRandomWordID();
+  mainString = getData(wordsFileLocation, id);
+  mainWord = mainString.split("\t")[0];
+  mainTranslation = mainString.split("\t")[1];
+  mainArticle = mainString.split("\t")[2]; //this exists only for words, not for verbs or other
+}
+
+function renderWord() {
+  myWordLocation.textContent = id + ' : ' + mainString;
+  germanWordInHTML.textContent = mainWord;
+  englishWordInHTML.textContent = mainTranslation;
+}
+
+function newWord() {
+  setNewWord();
+  renderWord();
+}
