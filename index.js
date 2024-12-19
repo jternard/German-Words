@@ -2,8 +2,8 @@
 //const verbCount = 900;
 //const otherCount = 1099;
 
-const myHeading = document.querySelector("h1");
-myHeading.textContent = "Hello world!";
+//const myHeading = document.querySelector("h1");
+document.querySelector("h1").textContent = "Hello world!";
 
 /*
 const myWordLocation = document.querySelector("#myWord");
