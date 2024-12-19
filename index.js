@@ -18,7 +18,6 @@ function GetRandomVerbID() {
 function GetRandomOtherID() {
   return rand(otherCount);
 }
-*/
 
 myHeading.querySelector("h1").textContent = "Hello world!";
 myWordLocation.textContent = "ok"
