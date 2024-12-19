@@ -40,7 +40,7 @@ function getRandomOtherID() {
 
 
 //https://github.com/mdn/dom-examples/blob/main/fetch/fetch-text/index.html
-function getData(fileName, rowID) {
+async function getData(fileName, rowID) {
   const myRequest = new Request(fileName);
   fetch(myRequest)
     .then((response) => {
@@ -50,7 +50,7 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      return text.split("\n")[rowID];
+      mainString = text.split("\n")[rowID];
       /*
       myWordLocation.textContent = text.split("\n")[rowID];
       GermanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
@@ -58,7 +58,7 @@ function getData(fileName, rowID) {
       */
     })
     .catch((error) => {
-      return `Error: ${error.message}`;
+      mainString = `Error: ${error.message}`;
       //myWordLocation.innerText = `Error: ${error.message}`;
     });
 }
@@ -73,7 +73,7 @@ function getGermanWord(rowID) {
 //click on the next button --> init all variables and set the fields
 function setNewWord() {
   id = getRandomWordID();
-  mainString = async () => await getData(wordsFileLocation, id);
+  await getData(wordsFileLocation, id);
   mainWord = mainString.split("\t")[0];
   mainTranslation = mainString.split("\t")[1];
   mainArticle = mainString.split("\t")[2]; //this exists only for words, not for verbs or other
