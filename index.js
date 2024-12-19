@@ -8,7 +8,7 @@ const otherFileLocation = './5000 german words - Other.tsv'
 const otherCount = 1099; //to be manually updated
 
 const myHeading = document.querySelector("h1");
-const myWordLocation = document.querySelector("p");
+//const myWordLocation = document.querySelector("p"); //for testing purpose only
 //const mySkipButton = document.querySelector("#btnSkip");
 
 const germanWordInHTML = document.getElementById("inputGerman");
@@ -99,7 +99,7 @@ async function setNewWord() {
 */
 
 function renderWord() {
-  myWordLocation.textContent = id + ' : ' + mainString;
+  //myWordLocation.textContent = id + ' : ' + mainString; //for testing purpose only
   germanWordInHTML.textContent = mainWord;
   englishWordInHTML.textContent = mainTranslation;
 }
