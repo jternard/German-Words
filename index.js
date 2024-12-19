@@ -3,6 +3,8 @@ const verbCount = 900;
 const otherCount = 1099;
 
 const myHeading = document.querySelector("h1");
+
+/*
 const myWordLocation = document.querySelector("#myWord");
 
 function rand(number) {
@@ -18,6 +20,6 @@ function GetRandomVerbID() {
 function GetRandomOtherID() {
   return rand(otherCount);
 }
-
+*/
 myHeading.textContent = "Hello world! ";// + GetRandomWordID();
 myWordLocation.textContent = "ok"
