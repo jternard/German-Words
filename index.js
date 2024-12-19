@@ -1,7 +1,21 @@
+const wordCount = 2426;
+const verbCount = 900;
+const otherCount = 1099;
+
 const myHeading = document.querySelector("h1");
 
 function rand(number) {
   return Math.trunc(Math.random(number);
 }
 
-myHeading.textContent = "Hello world! " + rand(200);
+function GetRandomWordID() {
+  return rand(wordCount);
+}
+function GetRandomVerbID() {
+  return rand(verbCount);
+}
+function GetRandomOtherID() {
+  return rand(otherCount);
+}
+
+myHeading.textContent = "Hello world! " + GetRandomWordID();
