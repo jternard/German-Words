@@ -62,7 +62,11 @@ function getData(fileName, rowID) {
       myWordLocation.textContent = text.split("\n")[rowID];
       germanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
       englishWordInHTML.textContent = myWordLocation.textContent.split("\t")[1];
-      */      
+      */
+      renderWord();
+      document.getElementById("btnDER").className = "btn btn-outline-primary";
+      document.getElementById("btnDIE").className = "btn btn-outline-primary";
+      document.getElementById("btnDAS").className = "btn btn-outline-primary";
     })
     .catch((error) => {
       //return `Error: ${error.message}`;
@@ -78,12 +82,7 @@ const getMainString = (wordsFileLocation, id) => {
 
 function getGermanWord() {
   id = getRandomWordID();
-  getData(wordsFileLocation, id).then(() => {
-    renderWord();
-    document.getElementById("btnDER").className = "btn btn-outline-primary";
-    document.getElementById("btnDIE").className = "btn btn-outline-primary";
-    document.getElementById("btnDAS").className = "btn btn-outline-primary";
-  });
+  getData(wordsFileLocation, id);
 }
 
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
