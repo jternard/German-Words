@@ -50,7 +50,7 @@ function getData(fileName, rowID) {
       return response.text();
     })
     .then((text) => {
-      return text.split("\n")[rowID];
+      return text.resolve().split("\n")[rowID];
       /*
       myWordLocation.textContent = text.split("\n")[rowID];
       GermanWordInHTML.textContent = myWordLocation.textContent.split("\t")[0];
