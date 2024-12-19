@@ -19,5 +19,5 @@ function GetRandomOtherID() {
   return rand(otherCount);
 }
 
-myHeading.querySelector("h1").textContent = "Hello world!";
+myHeading.textContent = "Hello world!";
 myWordLocation.textContent = "ok"
