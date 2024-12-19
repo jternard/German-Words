@@ -20,4 +20,4 @@ function GetRandomOtherID() {
 }
 
 myHeading.textContent = "Hello world!";
-myWordLocation.textContent = "ok"
+myWordLocation.textContent = "Let's take word: " + GetRandomWordID() + " out of " + wordCount
