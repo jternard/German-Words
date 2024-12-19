@@ -49,15 +49,6 @@ function FetchFile(fileName) {
     .then(response => varFile = response.text());
 }
 
-const image = document.querySelector(".my-image");
-fetch("flowers.jpg")
-  .then((response) => response.blob())
-  .then((blob) => {
-    const objectURL = URL.createObjectURL(blob);
-    image.src = objectURL;
-  });
-
-
 function GetGermanWord(rowID) {
   FetchFile('./5000 german words - Words.tsv'); //should only be loaded if not already loaded
   return wordFile.slice(rowID, wordFile.indexOf("\n"));
