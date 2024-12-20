@@ -123,7 +123,6 @@ function checkArticle(caller) {
     }
   } else {
     caller.className = "btn btn-danger";
-    if
   }
   
   if (currentAttemptsAtWord == 0) {
