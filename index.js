@@ -131,5 +131,5 @@ function checkArticle(caller) {
     denom++;
   }
 
-  document.getElementById("pct").textContent = num / denom;
+  document.getElementById("pct").textContent = Math.round(100 * num / denom, 0)+'%';
 }
