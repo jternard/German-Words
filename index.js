@@ -20,6 +20,10 @@ var mainWord;
 var mainTranslation;
 var mainArticle;
 
+var denom = 0;
+var num = 0;
+var currentAttemptsAtWord = 0;
+
 
 
 function getRandomInt(min, max) {
@@ -83,6 +87,7 @@ const getMainString = (wordsFileLocation, id) => {
 function getGermanWord() {
   id = getRandomWordID();
   getData(wordsFileLocation, id);
+  currentAttemptsAtWord = 0;
 }
 
 //mySkipButton.addEventListener("click", GetGermanWord(GetRandomWordID()));
@@ -109,7 +114,22 @@ function newWord() {
   renderWord();
 }
 
-function checkArticle(caller) {
+function checkArticle(caller) {    
   var btnArticle = caller.id.substr(-3).toLowerCase();
-  (btnArticle === mainArticle) ? caller.className = "btn btn-success" : caller.className = "btn btn-danger";
+  if (btnArticle === mainArticle) {
+    caller.className = "btn btn-success";
+    if (currentAttemptsAtWord == 0) {
+      num++;
+    }
+  } else {
+    caller.className = "btn btn-danger";
+    if
+  }
+  
+  if (currentAttemptsAtWord == 0) {
+    currentAttemptsAtWord++;
+    denom++;
+  }
+
+  document.getElementById("pct").textContent = num / denom;
 }
