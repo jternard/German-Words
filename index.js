@@ -1,5 +1,5 @@
 const wordsFileLocation = './5000 german words - Words.tsv'
-const wordCount = 2426; //to be manually updated
+const wordCount = 4093; //to be manually updated
 
 const verbsFileLocation = './5000 german words - Verbs.tsv'
 const verbCount = 900; //to be manually updated
